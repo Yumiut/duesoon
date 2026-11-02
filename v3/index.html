@@ -1,0 +1,239 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DueSoon v3 · Assignment planner</title><style>:root{--ink:#243c35;--muted:#63746c;--green:#285d48;--line:#e0e6dc}*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f7f8f3;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);padding:11px 16px;border-radius:9px}button:hover{background:#edf2e8}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b4812a;outline-offset:3px}a{color:var(--green)}aside{position:fixed;inset:0 auto 0 0;width:245px;background:white;border-right:1px solid var(--line);padding:35px 22px;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-size:26px;font-weight:750;letter-spacing:-1px}.brand b{background:var(--green);color:white;border-radius:10px;padding:5px 10px}.brand span{font-size:9px;color:#8aa15c;align-self:flex-start}.eyebrow{font-size:10px;letter-spacing:1.8px;font-weight:750;color:var(--muted)}aside>.eyebrow{margin:55px 0 12px 10px}nav{display:grid;gap:9px}nav button{text-align:left;border:0;padding:14px 10px;font-size:13px}nav button.selected{background:#eaf0e4;color:var(--green);font-weight:650}.profile{margin-top:auto;font-size:13px}small{display:block;color:var(--muted);font-size:11px;line-height:1.6}.profile small{margin-top:8px}main{margin-left:245px;padding:0 48px 28px;max-width:1500px}header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:1px;color:var(--muted)}.intro{display:flex;align-items:center;justify-content:space-between;margin:42px 0 30px;gap:20px}h1{font-size:39px;letter-spacing:-1.7px;font-weight:600;margin:12px 0}p{color:var(--muted);line-height:1.6;font-size:14px}.primary{background:var(--green);color:white;border-color:var(--green);font-size:13px;padding:13px 19px}.primary:hover{background:#194733}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.stats article{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px;font-size:12px;color:var(--muted)}.stats strong{display:block;font-size:34px;font-weight:550;margin:8px 0;color:var(--ink)}.focus{margin:25px 0 35px;background:#e9efdf;border:1px solid #dce5ce;border-radius:13px;display:flex;align-items:center;justify-content:space-between;padding:20px 25px;gap:20px}.focus h2{font-size:21px;margin:8px 0;overflow-wrap:anywhere}.focus p{margin:4px 0;font-size:12px}.focus .eyebrow{font-size:9px}.focus>span{font-size:48px;font-weight:200;color:#66834b}.section-head{display:flex;align-items:center;justify-content:space-between;gap:20px}.section-head h2{font-size:20px;margin:0}.section-head p{font-size:12px;margin:7px 0 0}.section-head input{width:225px;border:1px solid var(--line);background:white;border-radius:9px;padding:12px;font-size:12px}.filters{display:flex;justify-content:space-between;align-items:center;margin:23px 0 12px;font-size:11px;color:var(--muted)}select{background:transparent;border:1px solid var(--line);padding:7px;border-radius:6px;margin-left:8px;font-size:12px}.task{background:white;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:18px;display:flex;align-items:center;gap:15px}.task input{width:19px;height:19px;accent-color:var(--green);cursor:pointer;flex-shrink:0}.task-info{flex:1;min-width:0}.task h3{font-size:14px;margin:0 0 6px;font-weight:600;overflow-wrap:anywhere}.task.done h3{text-decoration:line-through;color:var(--muted)}.task-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted)}.badge{font-size:10px;border-radius:5px;padding:5px 8px;background:#eef1ea;white-space:nowrap}.badge.overdue{background:#fcece4;color:#9a4027}.badge.soon{background:#f5efd6;color:#746020}.actions{display:flex;gap:5px}.actions button{font-size:11px;padding:7px 9px;border:0;background:transparent}.actions button:hover{background:#eaf0e4}footer{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-top:1px solid var(--line);margin-top:32px;padding-top:18px;color:var(--muted);font-size:10px}footer button{font-size:10px;padding:7px 10px}.empty{text-align:center;border:1px dashed #c7d1c0;border-radius:12px;padding:35px 20px}.empty h3{font-size:18px}.empty p{font-size:13px}.empty-icon{font-size:32px}dialog{border:1px solid var(--line);border-radius:16px;padding:28px;width:470px;max-width:calc(100% - 24px);color:var(--ink)}dialog::backdrop{background:#18382a65;backdrop-filter:blur(3px)}.dialog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.dialog-head h2{margin:4px 0}.dialog-head .eyebrow{margin:0}.dialog-head button{border:0;font-size:24px;padding:4px 10px}form>label{display:block;margin:16px 0;font-size:12px;font-weight:600}form input{display:block;width:100%;border:1px solid #b5c2b1;border-radius:8px;padding:12px;margin-top:8px;color:var(--ink);background:white}.help{font-size:11px}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}#form-error,#storage-warning{font-size:12px;color:#a23b20}#notice{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);padding:14px 20px;background:#203e31;color:white;border-radius:10px;box-shadow:0 6px 25px #203e3130;max-width:90%;font-size:13px;z-index:5}#notice button{margin-left:15px;padding:6px 10px;font-size:12px}#notice[hidden]{display:none}
+@media(max-width:1000px){aside{width:205px;padding:30px 15px}main{margin-left:205px;padding:0 25px 25px}h1{font-size:32px}.task{flex-wrap:wrap}.actions{margin-left:auto}}@media(max-width:720px){aside{position:static;width:auto;padding:18px 20px;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:22px}aside>.eyebrow,.profile{display:none}nav{display:flex;gap:4px;margin-top:18px}nav button{font-size:11px;padding:10px 8px;flex:1}main{margin:0;padding:0 18px 25px}header{height:55px;font-size:8px}.intro{align-items:flex-start;flex-direction:column;margin:27px 0 22px;gap:6px}h1{font-size:32px}.intro>div>p:last-child{font-size:12px}.stats{gap:7px}.stats article{padding:15px 11px;font-size:10px}.stats small{font-size:9px}.stats strong{font-size:27px}.focus{padding:17px;margin:20px 0 27px}.section-head{flex-direction:column;align-items:stretch;gap:14px}.section-head input{width:100%}.task{padding:13px;gap:10px}.task-info{flex-basis:65%}.task .badge{margin-left:29px}.task h3{font-size:13px}footer{font-size:9px;gap:10px}}
+
+.stats article {font-size: 1rem; font-weight: 600}
+.stats strong {font-size: clamp(2.5rem, 5vw, 3.25rem)}
+#guide li {margin: 14px 0; line-height: 1.5}
+#guide ol {padding-left: 22px}
+.delete-action {background: #87392c; color: white}
+.delete-action:hover {background: #702a20}
+
+main.show-detail > :not(#detail-page):not(#storage-warning){display:none}
+#detail-page{max-width:800px;margin:42px auto}
+.back-link{display:inline-block;margin-bottom:32px}
+.detail-panel{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(16px,4vw,32px)}
+.detail-panel label{display:block;font-weight:650;margin:12px 0 8px}
+.detail-panel select{margin:0 0 18px;padding:10px}
+.detail-panel textarea{box-sizing:border-box;width:100%;padding:14px;font:inherit;color:var(--ink);border:1px solid #a7b8ac;border-radius:8px;resize:vertical}
+.detail-panel p{font-size:12px}
+.task{cursor:pointer}.assignment-link{color:inherit;text-decoration:none}.task:hover .assignment-link,.assignment-link:focus-visible{text-decoration:underline}
+.progress-label{font-weight:600;color:var(--green)}
+
+.progress-label {display:inline-flex;align-items:center;border-radius:6px;background:#edf0ed;color:#35453a;padding:3px 8px}
+.progress-label.in-progress {background:#e0edff;color:#244e7c}
+.progress-label.completed {background:#daefdf;color:#225838}
+.task-meta {align-items:center}
+[hidden]{display:none!important}#assignments-page,#notebook{margin:32px 0}.filters{flex-wrap:wrap;gap:12px}#notebook{max-width:850px}#scratchpad{line-height:1.75}.stats article{min-width:0}@media(max-width:720px){nav{display:grid;grid-template-columns:1fr 1fr}} </style></head><body>
+<aside><a class="brand" href="#home"><b>d.</b> DueSoon<span>●</span></a><p class="eyebrow">YOUR STUDY SPACE</p><nav aria-label="Workspace"><button data-view="home">Home</button><button data-view="active">My assignments</button><button data-view="done">Completed</button><button data-view="notes">To-do notebook</button></nav><div class="profile">H &nbsp; My workspace<small>Personal assignment planner</small></div></aside>
+<main><header><span id="breadcrumb">WORKSPACE / HOME</span><span id="today"></span><button type="button" id="guide-open">Getting started</button></header><section class="intro"><div><p class="eyebrow">A LITTLE CLARITY GOES A LONG WAY</p><h1>Your next step, clear.</h1><p>Keep your deadlines in sight. Make room to focus.</p></div><button class="primary" id="add">＋ Add assignment</button></section>
+<section class="stats"><article>To do<strong id="active-count">0</strong></article><article>Due this week<strong id="week-count">0</strong></article><article>Overdue<strong id="late-count">0</strong></article></section>
+<section class="focus"><div><p class="eyebrow">NEXT UP</p><h2 id="next-title">A fresh start.</h2><p id="next-detail"></p></div><span aria-hidden="true">↗</span></section>
+<section id="assignments-page"><div class="section-head"><div><h2 id="list-heading">My assignments</h2><p id="list-caption">Sorted by deadline, earliest first.</p></div><input type="search" id="search" aria-label="Search assignments" placeholder="Search assignments…"></div><div class="filters"><label id="period-control">Due date <select id="period"><option value="all">All dates</option><option value="week">This week</option><option value="month">This month</option><option value="year">This year</option></select></label><label>Course <select id="course-filter"><option value="">All courses</option></select></label><span id="result-count"></span></div><div id="list"></div></section>
+<section id="notebook" hidden><p class="eyebrow">PERSONAL WORKSPACE</p><h1>To-do notebook</h1><div class="detail-panel"><label for="scratchpad">My notes</label><textarea rows="12" id="scratchpad" placeholder="Write a to-do, an idea or a reminder…"></textarea><p role="status" id="note-state">Saved in this browser as you type.</p></div></section><section id="detail-page" hidden aria-labelledby="detail-heading">
+  <a href="#active" class="back-link">← Back to assignments</a>
+  <p class="eyebrow">ASSIGNMENT DETAILS</p>
+  <h1 id="detail-heading" tabindex="-1"></h1>
+  <p id="detail-context"></p>
+  <div class="detail-panel">
+    <label for="detail-status">Progress status</label>
+    <select id="detail-status">
+      <option value="not-started">Not started</option>
+      <option value="in-progress">In progress</option>
+      <option value="completed">Completed</option>
+    </select>
+    <label for="detail-notes">Assignment details</label>
+    <textarea id="detail-notes" rows="8" placeholder="Write your notes, assignment requirements or useful links here."></textarea>
+    <p id="detail-saved" role="status">Changes are saved on this browser.</p>
+  </div>
+</section>
+<footer><span>Saved on this browser only. No account or cloud sync.</span><button id="demo">Try sample assignments</button><a href="https://yumiut.github.io/duesoon/v1/">View first version</a></footer><p id="storage-warning" role="alert" hidden></p></main>
+<dialog id="guide" aria-labelledby="guide-title">
+<h2 id="guide-title">Getting started</h2>
+<ol><li><strong>Add an assignment.</strong> Choose Add assignment and enter its title, course and due date.</li>
+<li><strong>Find your next deadline.</strong> My assignments lists unfinished work in deadline order. Use search or the course filter to narrow the list.</li>
+<li><strong>Finish or correct a task.</strong> Open My assignments and filter by course, this week (Monday to Sunday), month or year. Use To-do notebook for personal notes. Select an assignment to write notes or set its progress. Tick its checkbox to move it to Completed. Use Edit to correct it, or uncheck it in Completed to reopen it.</li></ol>
+<button id="guide-close" type="button">Got it</button></dialog>
+<dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-summary">
+<h2 id="delete-title">Delete assignment?</h2><p id="delete-summary"></p>
+<form method="dialog" class="dialog-actions"><button value="cancel" autofocus>Keep assignment</button><button value="delete" class="delete-action">Delete assignment</button></form></dialog>
+<dialog id="editor" aria-labelledby="dialog-title"><form id="task-form"><div class="dialog-head"><div><p class="eyebrow">MAKE A LITTLE PLAN</p><h2 id="dialog-title">Add assignment</h2></div><button id="close" type="button" aria-label="Close">×</button></div><label>Assignment title<input id="title" required maxlength="100" placeholder="e.g. Interface redesign"></label><label>Course<input id="course" required maxlength="60" list="courses" placeholder="e.g. GUI Design"></label><datalist id="courses"></datalist><label>Due date<input id="due" type="date" required min="2000-01-01" max="2100-12-31"></label><p class="help">Dates use your device's local calendar. A task becomes overdue the next day. Past dates are allowed for catch-up work.</p><p id="form-error" role="alert"></p><div class="dialog-actions"><button id="cancel" type="button">Cancel</button><button type="submit" class="primary">Save assignment</button></div></form></dialog>
+<div id="notice" role="status" aria-live="polite" hidden><span id="notice-text"></span><button id="undo" hidden>Undo delete</button><button id="dismiss" aria-label="Dismiss message">×</button></div><script>'use strict';
+const $=s=>document.querySelector(s),KEY='duesoon-v2';let tasks=[],view='active',editing=null,removed=null;
+const dateString=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const today=()=>dateString(new Date());
+const daysUntil=s=>{const a=s.split('-').map(Number),b=today().split('-').map(Number);return Math.round((Date.UTC(a[0],a[1]-1,a[2])-Date.UTC(b[0],b[1]-1,b[2]))/86400000)};
+const validDate=s=>/^\d{4}-\d{2}-\d{2}$/.test(s)&&s>='2000-01-01'&&s<='2100-12-31'&&dateString(new Date(s+'T12:00:00'))===s;
+const validTask=t=>t&&typeof t.id==='string'&&typeof t.title==='string'&&t.title.trim()&&t.title.length<=100&&typeof t.course==='string'&&t.course.trim()&&t.course.length<=60&&typeof t.done==='boolean'&&validDate(t.due);
+function storageWarning(){const p=$('#storage-warning');p.hidden=false;p.textContent='Browser storage is unavailable or contains unreadable data. Changes may last only for this session. Keep a separate copy of important deadlines.'}
+try{const raw=localStorage.getItem(KEY);if(raw){const value=JSON.parse(raw);if(!Array.isArray(value)||!value.every(validTask))throw Error('Invalid data');tasks=value}}catch{storageWarning()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(tasks))}catch{storageWarning()}}
+function tell(message,undo=false){$('#notice-text').textContent=message;$('#notice').hidden=false;$('#undo').hidden=!undo}
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+const longDate=s=>new Date(s+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+function dueLabel(t){const n=daysUntil(t.due);return t.done?'Completed':n<0?`${Math.abs(n)} day${n===-1?'':'s'} overdue`:n===0?'Due today':n===1?'Due tomorrow':`Due in ${n} days`}
+function render(){
+ $('#today').textContent=new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+ const active=tasks.filter(t=>!t.done),week=active.filter(t=>matchesPeriod(t.due,'week'));
+ $('#active-count').textContent=active.length;$('#week-count').textContent=week.length;$('#late-count').textContent=active.filter(t=>daysUntil(t.due)<0).length;
+ const next=[...active].sort((a,b)=>a.due.localeCompare(b.due))[0];$('#next-title').textContent=next?next.title:tasks.length?'All caught up.':'A fresh start.';$('#next-detail').textContent=next?`${next.course} · ${dueLabel(next)} · ${longDate(next.due)}`:tasks.length?'Your completed work is waiting in the Completed view.':'Add your first assignment to see what is coming up.';
+ const cf=$('#course-filter'),selected=cf.value,courses=[...new Set(tasks.map(t=>t.course))].sort();cf.replaceChildren(new Option('All courses',''));$('#courses').replaceChildren();for(const c of courses){cf.add(new Option(c,c));$('#courses').append(new Option(c,c))}cf.value=courses.includes(selected)?selected:'';
+ const q=$('#search').value.trim().toLowerCase();const visible=tasks.filter(t=>(view==='done'?t.done:!t.done && matchesPeriod(t.due,$('#period').value))&&(!cf.value||t.course===cf.value)&&`${t.title} ${t.course}`.toLowerCase().includes(q)).sort((a,b)=>a.due.localeCompare(b.due));
+ $('#list-heading').textContent=view==='done'?'Completed assignments':'My assignments';
+ $('#list-caption').textContent=view==='active'&&$('#period').value==='week'?'Monday through Sunday, earliest deadline first.':'Sorted by deadline, earliest first.';
+ $('#result-count').textContent=`${visible.length} assignment${visible.length===1?'':'s'}`;
+ const list=$('#list');list.replaceChildren();for(const t of visible){const row=el('article','task'+(t.done?' done':''));const check=el('input');check.type='checkbox';check.checked=t.done;check.setAttribute('aria-label',`${t.done?'Reopen':'Complete'} ${t.title}`);check.addEventListener('change',()=>{t.done=check.checked;t.progress=t.done?"completed":"not-started";save();render();tell(t.done?'Assignment completed. Find it in Completed.':'Assignment reopened.')});const info=el('div','task-info');info.append(detailHeading(t));const meta=el('div','task-meta');meta.append(el('span','',t.course),el('span','',longDate(t.due)),el('span','progress-label '+progressOf(t),'Progress: '+progressLabel(t)));info.append(meta);const n=daysUntil(t.due);const badge=el('span','badge'+(!t.done&&n<0?' overdue':!t.done&&n<=2?' soon':''),dueLabel(t));const actions=el('div','actions');for(const [label,fn] of [['Edit',()=>openEditor(t)],['Delete',()=>askToDelete(t)]]){const b=el('button','',label);b.setAttribute('aria-label',`${label} ${t.title}`);b.onclick=fn;actions.append(b)}row.append(check,info,badge,actions);list.append(row)}
+ if(!visible.length){const e=el('div','empty');e.append(el('div','empty-icon','◫'),el('h3','',q||cf.value||(view==='active'&&$('#period').value!=='all')?'No matching assignments':view==='done'?'Small wins will live here':'Make room for your first task'),el('p','',q||cf.value||(view==='active'&&$('#period').value!=='all')?'Try a different date range, course or search.':view==='done'?'Mark an assignment complete to move it here.':'Add a course, a title and a date. Start there.'));if(view==='active'&&!q&&!cf.value){const b=el('button','primary','＋ Add assignment');b.onclick=()=>openEditor();e.append(b)}list.append(e)}
+ $('#demo').hidden=tasks.length>0;
+}
+function openEditor(t){editing=t?t.id:null;$('#task-form').reset();$('#dialog-title').textContent=t?'Edit assignment':'Add assignment';$('#form-error').textContent='';if(t){$('#title').value=t.title;$('#course').value=t.course;$('#due').value=t.due}$('#editor').showModal();$('#title').focus()}
+$('#add').onclick=()=>openEditor();$('#close').onclick=$('#cancel').onclick=()=>$('#editor').close();
+$('#task-form').onsubmit=e=>{e.preventDefault();const title=$('#title').value.trim(),course=$('#course').value.trim(),due=$('#due').value;if(!title||!course||!validDate(due)){$('#form-error').textContent='Enter a title, a course and a valid date between 2000 and 2100.';return}if(editing){Object.assign(tasks.find(t=>t.id===editing),{title,course,due})}else tasks.push({id:crypto.randomUUID(),title,course,due,done:false});save();$('#editor').close();view=editing&&tasks.find(t=>t.id===editing)?.done?'done':'active';$('#period').value='all';location.hash=view;$('#search').value='';$('#course-filter').value='';updateNav();render();tell(editing?'Assignment updated.':'Assignment added and saved on this browser.')};
+function updateNav(){document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('selected',b.dataset.view===view);b.setAttribute('aria-pressed',String(b.dataset.view===view))})}
+ document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{location.hash=b.dataset.view});$('#search').oninput=render;$('#course-filter').onchange=render;
+$('#undo').onclick=()=>{if(removed){tasks.splice(Math.min(removed.index,tasks.length),0,removed.task);removed=null;save();render();tell('Assignment restored.')}};
+$('#demo').onclick=()=>{if(tasks.length)return;const date=n=>{const d=new Date();d.setDate(d.getDate()+n);return dateString(d)};tasks=[['Interface redesign','GUI Design',1,false],['Reading reflection','Academic Writing',4,false],['Practice exercises','Mathematics',-2,false],['Project outline','Software Engineering',7,false],['Research notes','GUI Design',-1,true]].map(([title,course,n,done])=>({id:crypto.randomUUID(),title,course,due:date(n),done}));save();render();tell('Sample assignments added. These are fictional examples you can edit or delete.')};
+window.addEventListener('focus',render);setInterval(render,60000);updateNav();render();
+
+$('#dismiss').onclick=()=>{$('#notice').hidden=true};
+
+let deletionCandidate = null;
+function askToDelete(task) {
+  deletionCandidate = task;
+  const dialog = $('#delete-dialog');
+  dialog.returnValue = '';
+  $('#delete-summary').textContent = 'Remove “' + task.title + '” from ' + task.course + '?';
+  dialog.showModal();
+}
+$('#delete-dialog').addEventListener('close', () => {
+  const task = deletionCandidate;
+  deletionCandidate = null;
+  if (!task || $('#delete-dialog').returnValue !== 'delete') return;
+  removed = {task: {...task}, index: tasks.indexOf(task)};
+  tasks = tasks.filter(item => item.id !== task.id);
+  save();
+  render();
+  tell('Assignment deleted.', true);
+});
+$('#guide-open').onclick = () => $('#guide').showModal();
+$('#guide-close').onclick = () => $('#guide').close();
+function progressOf(task) {
+  if (task.done) return 'completed';
+  return task.progress === 'in-progress' ? 'in-progress' : 'not-started';
+}
+
+function progressLabel(task) {
+  return {'not-started':'Not started', 'in-progress':'In progress', completed:'Completed'}[progressOf(task)];
+}
+
+function detailUrl(task) {
+  return '#assignment/' + encodeURIComponent(task.id);
+}
+
+function detailHeading(task) {
+  const heading = el('h3');
+  const link = el('a', 'assignment-link', task.title);
+  link.href = detailUrl(task);
+  heading.append(link);
+  return heading;
+}
+
+let openTask = null;
+function showRoute() {
+  const detailRoute = location.hash.startsWith('#assignment/');
+  const route = location.hash.slice(1);
+  if (!detailRoute) view = ['home','active','done','notes'].includes(route) ? route : 'home';
+  openTask = detailRoute ? tasks.find(task => detailUrl(task) === location.hash) : null;
+  const detailPage = $('#detail-page');
+  detailPage.hidden = !openTask;
+  const pageName = openTask ? 'detail' : view;
+  document.querySelectorAll('.intro,.stats,.focus').forEach(section => section.hidden = pageName !== 'home');
+  $('#assignments-page').hidden = !['active','done'].includes(pageName);
+  $('#notebook').hidden = pageName !== 'notes';
+  $('#period-control').hidden = pageName !== 'active';
+  $('.back-link').href = view === 'done' ? '#done' : '#active';
+  $('#breadcrumb').textContent = 'WORKSPACE / ' + ({home:'HOME',active:'MY ASSIGNMENTS',done:'COMPLETED',notes:'TO-DO NOTEBOOK',detail:'ASSIGNMENT DETAILS'}[pageName]);
+  updateNav();
+  window.scrollTo(0,0);
+  document.querySelector('main').classList.toggle('show-detail', Boolean(openTask));
+  if (!openTask) {
+    if (detailRoute) tell('This assignment is unavailable in this browser.');
+    render();
+    return;
+  }
+  $('#notice').hidden = true;
+  $('#detail-heading').textContent = openTask.title;
+  $('#detail-context').textContent = openTask.course + ' · Due ' + longDate(openTask.due);
+  $('#detail-status').value = progressOf(openTask);
+  $('#detail-notes').value = openTask.notes || '';
+  $('#detail-saved').textContent = 'Changes are saved on this browser.';
+  $('#detail-heading').focus();
+  window.scrollTo(0, 0);
+}
+
+function persistDetails() {
+  save();
+  $('#detail-saved').textContent = $('#storage-warning').hidden
+    ? 'Saved on this browser.' : 'Browser storage is unavailable. Copy your notes before closing.';
+}
+
+$('#detail-notes').addEventListener('input', () => {
+  openTask.notes = $('#detail-notes').value;
+  persistDetails();
+});
+$('#detail-status').addEventListener('change', () => {
+  openTask.progress = $('#detail-status').value;
+  openTask.done = openTask.progress === 'completed';
+  persistDetails();
+  render();
+});
+$('#list').addEventListener('click', event => {
+  if (event.target.closest('input, button, a')) return;
+  const link = event.target.closest('.task')?.querySelector('.assignment-link');
+  if (link) location.hash = link.hash;
+});
+window.addEventListener('hashchange', showRoute);
+showRoute();
+
+let visibleView = openTask ? location.hash : view;
+function animateNavigation() {
+  const destination = openTask ? location.hash : view;
+  if (visibleView === destination) return;
+  const fromDetails = visibleView.startsWith('#assignment/');
+  visibleView = destination;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const surface = openTask ? $('#detail-page') : view === 'home' ? $('.intro') : view === 'notes' ? $('#notebook') : $('#assignments-page');
+  surface.animate(
+    [{opacity: 0.4, transform: 'translateY(6px)'}, {opacity: 1, transform: 'translateY(0)'}],
+    {duration: 180, easing: 'ease-out'}
+  );
+}
+window.addEventListener('hashchange', animateNavigation);
+
+
+function matchesPeriod(due, period, reference = new Date()) {
+  const current = dateString(reference);
+  if (period === 'year') return due.slice(0,4) === current.slice(0,4);
+  if (period === 'month') return due.slice(0,7) === current.slice(0,7);
+  if (period !== 'week') return true;
+  const monday = new Date(reference);
+  monday.setDate(reference.getDate() - (reference.getDay()+6)%7);
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate()+6);
+  return due >= dateString(monday) && due <= dateString(sunday);
+}
+$('#period').onchange = render;
+const notebookKey = 'duesoon-personal-notebook';
+try {
+  $('#scratchpad').value = localStorage.getItem(notebookKey) || '';
+} catch {
+  $('#note-state').textContent = 'Storage is unavailable. Copy your notes before leaving.';
+}
+$('#scratchpad').addEventListener('input', event => {
+  try {
+    localStorage.setItem(notebookKey, event.target.value);
+    $('#note-state').textContent = 'Saved on this browser.';
+  } catch {
+    $('#note-state').textContent = 'Unable to save. Copy your notes before leaving.';
+  }
+});
+</script></body></html>
